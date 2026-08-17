@@ -1,0 +1,86 @@
+/* =====================================================
+   MENU RESPONSIVO PADRONIZADO
+   Caderno / Notebook / Tablet / Celular / Mesa
+===================================================== */
+
+@media (min-width: 1200px) {
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 12px 16px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .menu {
+        gap: 6px;
+    }
+
+    .menu a {
+        font-size: 12px;
+        padding: 11px 12px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+    .menu {
+        gap: 4px;
+    }
+
+    .menu a {
+        font-size: 10.5px;
+        padding: 9px 8px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+        grid-auto-flow: row;
+        gap: 6px;
+        margin: 0;
+        padding: 15px;
+        background: linear-gradient(135deg, rgba(0,51,102,.98), rgba(0,74,173,.98));
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,.30);
+        z-index: 1000;
+    }
+
+    .menu.active {
+        display: grid;
+    }
+
+    .menu li {
+        width: 100%;
+        padding: 2px 0;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: left;
+        padding: 13px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .menu a {
+        font-size: 13px;
+        padding: 12px 10px;
+    }
+}

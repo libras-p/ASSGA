@@ -837,7 +837,7 @@ footer{
 
 }
 
-/* =====================================================\n   MELHORIAS GLOBAIS\n===================================================== */\n\n/* Containers e painéis com animações */\nmain,\nsection,\n.container,\n.diretor {\n    animation: fadeInUp 0.6s ease;\n    transition: all 0.3s ease;\n}\n\nmain:hover,\nsection:hover,\n.container:hover,\n.diretor:hover {\n    box-shadow: 0 16px 50px rgba(0, 74, 173, 0.15) !important;\n    transform: translateY(-2px);\n}\n\n/* Botões com efeito shine */\nbutton,\n.btn,\na.btn {\n    position: relative;\n    overflow: hidden;\n    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\nbutton::before,\n.btn::before,\na.btn::before {\n    content: '';\n    position: absolute;\n    inset: 0;\n    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2), transparent 70%);\n    transform: translateX(-100%);\n}\n\nbutton:hover::before,\n.btn:hover::before,\na.btn:hover::before {\n    animation: shine 0.6s ease;\n}\n\nbutton:hover,\n.btn:hover,\na.btn:hover {\n    transform: translateY(-4px) scale(1.03);\n    box-shadow: 0 10px 28px rgba(0, 74, 173, 0.35) !important;\n}\n\n/* Menu links com overlay */\n.menu a {\n    position: relative;\n    overflow: hidden;\n    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.menu a::after {\n    content: '';\n    position: absolute;\n    inset: 0;\n    background: rgba(255,255,255,0.1);\n    transform: scaleX(0);\n    origin: left;\n    transition: transform 0.3s ease;\n    border-radius: 25px;\n}\n\n.menu a:hover::after {\n    transform: scaleX(1);\n}\n\n</style>
+</style>
 
 </head>
 
@@ -868,17 +868,16 @@ footer{
     </div>
 
 
-    <button
+    <div
         class="menu-toggle"
-        id="menuToggle"
         onclick="toggleMenu()"
         aria-label="Abrir menu"
-        aria-controls="menu"
-        aria-expanded="false"
-        type="button"
+        title="Abrir menu"
     >
-        <i id="menuIcon" class="fas fa-bars"></i>
-    </button>
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
 
 
     <nav>
@@ -1364,84 +1363,14 @@ footer{
 
 function toggleMenu(){
 
-    const menu =
-        document.getElementById("menu");
-
-    const toggle =
-        document.getElementById("menuToggle");
-
-    const icon =
-        document.getElementById("menuIcon");
-
-    menu.classList.toggle("active");
-
-    const aberto =
-        menu.classList.contains("active");
-
-    toggle.setAttribute(
-        "aria-expanded",
-        aberto
-    );
-
-    toggle.setAttribute(
-        "aria-label",
-        aberto
-            ? "Fechar menu"
-            : "Abrir menu"
-    );
-
-    if(aberto){
-
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
-
-    }else{
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-    }
+    document
+        .getElementById("menu")
+        .classList
+        .toggle("active");
 
 }
-
-
-function fecharMenu(){
-
-    const menu =
-        document.getElementById("menu");
-
-    const toggle =
-        document.getElementById("menuToggle");
-
-    const icon =
-        document.getElementById("menuIcon");
-
-    menu.classList.remove("active");
-
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Abrir menu");
-
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
-
-}
-
-
-document.querySelectorAll(".menu a").forEach(function(link){
-
-    link.addEventListener("click", function(){
-
-        fecharMenu();
-
-    });
-
-});
 
 </script>
-
-<!-- CARREGAR DADOS DO PAINEL ADMIN -->
-<script src="carregar-dados.js"></script>
-<link rel="stylesheet" href="menu-responsivo.css">
 
 </body>
 

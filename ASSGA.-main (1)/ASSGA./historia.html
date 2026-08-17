@@ -53,30 +53,6 @@
 <style>
 
 /* =====================================================
-   ANIMAÇÕES GLOBAIS
-===================================================== */
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-/* =====================================================
    RESET
 ===================================================== */
 
@@ -130,8 +106,6 @@ h2{
 
     text-shadow:
         2px 2px 4px rgba(0,0,0,.1);
-
-    letter-spacing:-0.5px;
 }
 
 h2 i{
@@ -139,9 +113,6 @@ h2 i{
     color:#004aad;
 
     margin-right:10px;
-
-    animation:
-        pulse 2s ease-in-out infinite;
 }
 
 
@@ -176,15 +147,6 @@ header{
 
     box-shadow:
         0 8px 32px rgba(0,51,102,.3);
-
-    transition:
-        all .3s ease;
-}
-
-header:hover{
-
-    box-shadow:
-        0 12px 40px rgba(0,51,102,.4);
 }
 
 
@@ -305,45 +267,7 @@ header:hover{
     border-radius:25px;
 
     transition:
-        all .4s
-        cubic-bezier(
-            .175,
-            .885,
-            .32,
-            1.275
-        );
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.menu a::before{
-
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        rgba(255,255,255,.1);
-
-    transform:
-        scaleX(0);
-
-    origin:left;
-
-    transition:
-        transform .3s ease;
-
-    border-radius:25px;
-}
-
-.menu a:hover::before{
-
-    transform:
-        scaleX(1);
+        all .4s ease;
 }
 
 
@@ -1967,10 +1891,6 @@ document.addEventListener(
 
 </script>
 
-
-<!-- CARREGAR DADOS DO PAINEL ADMIN -->
-<script src="carregar-dados.js"></script>
-<link rel="stylesheet" href="menu-responsivo.css">
 
 </body>
 

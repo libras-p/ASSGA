@@ -1,0 +1,273 @@
+/**
+ * CSS TEMPLATE - MELHORIAS PARA TODAS AS PÁGINAS ASSGA
+ * 
+ * Este arquivo contém um padrão CSS que melhora todas as páginas
+ * com animações, gradientes, sombras dinâmicas e responsividade
+ * 
+ * Como usar:
+ * 1. Copie as seções de estilo que faltam em sua página
+ * 2. Adapte seletores conforme necessário
+ * 3. Mantenha o padrão de cores ASSGA
+ */
+
+/* =========================================================
+   ANIMAÇÕES GLOBAIS
+========================================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* =========================================================
+   HEADER MELHORADO
+========================================================= */
+
+header {
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 51, 102, 0.3);
+}
+
+header:hover {
+    box-shadow: 0 12px 40px rgba(0, 51, 102, 0.4);
+}
+
+/* Menu links com efeito shine */
+.menu a {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scaleX(0);
+    origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 25px;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+}
+
+@media (hover: hover) {
+    .menu a:hover {
+        color: #003366;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+        transform: translateY(-3px);
+    }
+}
+
+/* =========================================================
+   CONTAINER/PAINEL PRINCIPAL
+========================================================= */
+
+.container,
+.painel,
+.secao {
+    animation: fadeInUp 0.6s ease;
+    transition: all 0.3s ease;
+}
+
+.container:hover,
+.painel:hover,
+.secao:hover {
+    box-shadow: 0 16px 50px rgba(0, 74, 173, 0.15);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   TÍTULOS COM ANIMAÇÃO
+========================================================= */
+
+h1, h2, h3 {
+    transition: all 0.3s ease;
+}
+
+h1 i, h2 i, h3 i {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* =========================================================
+   BOTÕES MODERNOS
+========================================================= */
+
+.btn,
+.botao,
+button:not(.menu-toggle) {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn::before,
+.botao::before,
+button:not(.menu-toggle)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.2),
+        transparent 70%
+    );
+    transform: translateX(-100%);
+}
+
+.btn:hover::before,
+.botao:hover::before,
+button:not(.menu-toggle):hover::before {
+    animation: shine 0.6s ease;
+}
+
+.btn:hover,
+.botao:hover,
+button:not(.menu-toggle):hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(0, 74, 173, 0.35);
+}
+
+/* =========================================================
+   CARDS/ITENS COM HOVER
+========================================================= */
+
+.card,
+.item,
+.card-item,
+article {
+    animation: fadeInUp 0.6s ease;
+    transition: all 0.4s ease;
+    border-radius: 16px;
+}
+
+.card:hover,
+.item:hover,
+.card-item:hover,
+article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 50px rgba(0, 74, 173, 0.22);
+}
+
+/* =========================================================
+   ÍCONES DINÂMICOS
+========================================================= */
+
+.icon-grande,
+.pdf-icon,
+.icon-destaque {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-grande:hover,
+.pdf-icon:hover,
+.icon-destaque:hover {
+    transform: translateY(-8px) scale(1.08);
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* =========================================================
+   MENU TOGGLE (MOBILE)
+========================================================= */
+
+.menu-toggle {
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg) scale(1.1);
+    color: #ffd700;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+    h1, .titulo-pagina {
+        font-size: 2em;
+    }
+
+    .menu a {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    h1, .titulo-pagina {
+        font-size: 1.9em;
+        margin-top: 35px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    button,
+    .btn,
+    .botao {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    h1, .titulo-pagina {
+        font-size: 1.65em;
+    }
+
+    button,
+    .btn,
+    .botao {
+        padding: 11px 16px;
+        font-size: 14px;
+    }
+}

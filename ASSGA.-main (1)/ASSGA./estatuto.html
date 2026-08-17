@@ -10,16 +10,6 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<meta
-    name="description"
-    content="Estatuto Social oficial da ASSGA - Associação Desportiva."
->
-
-<meta
-    name="theme-color"
-    content="#003366"
->
-
 <title>Estatuto - ASSGA</title>
 
 
@@ -53,7 +43,7 @@
 <style>
 
 /* =========================================================
-   RESET & BASE
+   RESET
 ========================================================= */
 
 *{
@@ -68,6 +58,7 @@
         Verdana,
         sans-serif;
 }
+
 
 html{
     scroll-behavior:smooth;
@@ -90,54 +81,9 @@ body{
     color:#333;
 }
 
-/* =========================================================
-   AVISO/ALERTA
-========================================================= */
-
-.aviso{
-
-    background:
-        linear-gradient(
-            135deg,
-            #e8f4f8 0%,
-            #d4e9f0 100%
-        );
-
-    border-left:
-        5px solid #0084a7;
-
-    border-radius:12px;
-
-    padding:18px 20px;
-
-    margin-bottom:28px;
-
-    color:#004a6f;
-
-    font-size:15px;
-
-    line-height:1.6;
-
-    box-shadow:
-        0 4px 12px
-        rgba(0,132,167,.15);
-}
-
-.aviso strong{
-
-    color:#003366;
-}
-
-.aviso i{
-
-    color:#0084a7;
-
-    margin-right:8px;
-}
-
 
 /* =========================================================
-   HEADER - MELHORADO
+   HEADER
 ========================================================= */
 
 header{
@@ -168,21 +114,11 @@ header{
     box-shadow:
         0 8px 32px
         rgba(0,51,102,.30);
-
-    transition:
-        all .3s ease;
-}
-
-header:hover{
-
-    box-shadow:
-        0 12px 40px
-        rgba(0,51,102,.40);
 }
 
 
 /* =========================================================
-   LOGO AREA
+   LOGO
 ========================================================= */
 
 .logo-area{
@@ -196,20 +132,16 @@ header:hover{
     cursor:pointer;
 
     transition:
-        transform .3s
-        cubic-bezier(
-            .175,
-            .885,
-            .32,
-            1.275
-        );
+        transform .3s ease;
 }
+
 
 .logo-area:hover{
 
     transform:
         scale(1.05);
 }
+
 
 .logo-area a{
 
@@ -219,6 +151,7 @@ header:hover{
 
     text-decoration:none;
 }
+
 
 .logo-area img{
 
@@ -233,17 +166,8 @@ header:hover{
     box-shadow:
         0 4px 12px
         rgba(0,0,0,.20);
-
-    transition:
-        all .3s ease;
 }
 
-.logo-area:hover img{
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.30);
-}
 
 .logo{
 
@@ -265,20 +189,17 @@ header:hover{
     -webkit-text-fill-color:transparent;
 
     background-clip:text;
-
-    text-shadow:
-        2px 2px 4px
-        rgba(0,0,0,.1);
 }
 
 
 /* =========================================================
-   NAVEGAÇÃO
+   MENU
 ========================================================= */
 
 nav{
     margin-left:auto;
 }
+
 
 .menu{
 
@@ -288,17 +209,19 @@ nav{
 
     grid-auto-flow:column;
 
-    gap:8px;
+    gap:10px;
 
     margin-left:auto;
 
     align-items:center;
 }
 
+
 .menu li{
 
     position:relative;
 }
+
 
 .menu a{
 
@@ -330,47 +253,14 @@ nav{
             .32,
             1.275
         );
-
-    position:relative;
-
-    overflow:hidden;
 }
 
-.menu a::before{
-
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        rgba(255,255,255,.1);
-
-    transform:
-        scaleX(0);
-
-    origin:left;
-
-    transition:
-        transform .3s ease;
-
-    border-radius:25px;
-}
-
-.menu a:hover::before{
-
-    transform:
-        scaleX(1);
-}
 
 .menu a i{
 
     font-size:15px;
-
-    transition:
-        all .3s ease;
 }
+
 
 @media (hover:hover){
 
@@ -393,50 +283,37 @@ nav{
             translateY(-3px);
     }
 
-    .menu a:hover i{
-
-        color:#003366;
-    }
-
 }
 
 
 /* =========================================================
-   MENU TOGGLE (MOBILE)
+   MENU TOGGLE
 ========================================================= */
 
 .menu-toggle{
 
     display:none;
 
-    font-size:26px;
+    font-size:28px;
 
     cursor:pointer;
 
     color:#fff;
 
     transition:
-        all .3s ease;
-
-    background:none;
-
-    border:none;
-
-    padding:5px 10px;
+        transform .3s ease;
 }
+
 
 .menu-toggle:hover{
 
     transform:
-        rotate(90deg)
-        scale(1.1);
-
-    color:#ffd700;
+        rotate(90deg);
 }
 
 
 /* =========================================================
-   TÍTULO DA PÁGINA
+   TÍTULO
 ========================================================= */
 
 .titulo-pagina{
@@ -444,44 +321,27 @@ nav{
     text-align:center;
 
     margin:
-        50px 20px 20px;
+        45px 20px 15px;
 
     color:#003366;
 
-    font-size:2.8em;
+    font-size:2.5em;
 
-    font-weight:900;
+    font-weight:700;
 
     text-shadow:
-        3px 3px 6px
-        rgba(0,0,0,.08);
-
-    letter-spacing:-0.5px;
+        2px 2px 4px
+        rgba(0,0,0,.10);
 }
+
 
 .titulo-pagina i{
 
     color:#004aad;
 
-    margin-right:12px;
-
-    animation:
-        pulse 2s ease-in-out infinite;
+    margin-right:8px;
 }
 
-@keyframes pulse{
-
-    0%,
-    100%{
-
-        opacity:1;
-    }
-
-    50%{
-
-        opacity:.7;
-    }
-}
 
 .subtitulo{
 
@@ -489,14 +349,12 @@ nav{
 
     color:#666;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
-    font-size:1.1em;
+    font-size:1.05em;
 
     padding:
         0 20px;
-
-    line-height:1.5;
 }
 
 
@@ -516,7 +374,7 @@ nav{
 
 
 /* =========================================================
-   PAINEL PRINCIPAL - DESIGN MELHORADO
+   PAINEL PRINCIPAL
 ========================================================= */
 
 .painel{
@@ -533,46 +391,11 @@ nav{
     padding:35px;
 
     box-shadow:
-        0 12px 40px
+        0 10px 35px
         rgba(0,0,0,.12);
 
     border-top:
-        6px solid #004aad;
-
-    transition:
-        all .3s ease;
-
-    animation:
-        fadeInUp .6s ease;
-}
-
-@keyframes fadeInUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(30px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-.painel:hover{
-
-    box-shadow:
-        0 16px 50px
-        rgba(0,74,173,.15);
-
-    transform:
-        translateY(-2px);
+        5px solid #004aad;
 }
 
 
@@ -590,14 +413,9 @@ nav{
 
     gap:20px;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
 
     flex-wrap:wrap;
-
-    padding-bottom:20px;
-
-    border-bottom:
-        2px solid #f0f0f0;
 }
 
 
@@ -605,27 +423,19 @@ nav{
 
     color:#003366;
 
-    font-size:1.7em;
-
-    font-weight:800;
+    font-size:1.6em;
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
-
-    text-shadow:
-        1px 1px 2px
-        rgba(0,0,0,.05);
+    gap:10px;
 }
 
 
 .painel-topo h3 i{
 
     color:#004aad;
-
-    font-size:1.1em;
 }
 
 
@@ -801,76 +611,24 @@ nav{
 
 
 /* =========================================================
-   DOCUMENTO - LAYOUT
-========================================================= */
-
-.documento{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:35px;
-
-    padding:30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8fbff 0%,
-            #f0f5ff 100%
-        );
-
-    border-radius:16px;
-
-    border:2px solid #e6f0ff;
-
-    margin:25px 0;
-
-    animation:
-        slideIn .6s ease;
-}
-
-@keyframes slideIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(20px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   PDF ICON - DESIGN MELHORADO
+   ÍCONE PDF
 ========================================================= */
 
 .pdf-icon{
 
-    width:110px;
+    width:90px;
 
-    height:110px;
+    height:90px;
 
-    min-width:110px;
+    min-width:90px;
 
-    border-radius:16px;
+    border-radius:18px;
 
     background:
         linear-gradient(
             135deg,
-            #ef4444 0%,
-            #dc2626 50%,
-            #991b1b 100%
+            #dc3545,
+            #b02a37
         );
 
     color:#fff;
@@ -881,177 +639,38 @@ nav{
 
     justify-content:center;
 
-    font-size:52px;
+    font-size:42px;
 
     box-shadow:
-        0 12px 28px
-        rgba(239,68,68,.35),
-        inset 0 1px 0
-        rgba(255,255,255,.2);
-
-    transition:
-        all .4s
-        cubic-bezier(
-            .175,
-            .885,
-            .32,
-            1.275
-        );
-
-    position:relative;
-}
-
-.pdf-icon::before{
-
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:16px;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            rgba(255,255,255,.3),
-            transparent 70%
-        );
-}
-
-.pdf-icon:hover{
-
-    transform:
-        translateY(-8px)
-        scale(1.08);
-
-    box-shadow:
-        0 18px 40px
-        rgba(239,68,68,.45),
-        inset 0 1px 0
-        rgba(255,255,255,.2);
+        0 8px 20px
+        rgba(220,53,69,.25);
 }
 
 
 /* =========================================================
-   DOCUMENTO INFO
-========================================================= */
-
-.documento-info{
-
-    flex:1;
-
-    min-width:250px;
-}
-
-.documento-info h4{
-
-    color:#003366;
-
-    font-size:1.5em;
-
-    margin-bottom:15px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-}
-
-.documento-info h4 i{
-
-    color:#ef4444;
-}
-
-.documento-info p{
-
-    color:#555;
-
-    line-height:1.8;
-
-    margin:12px 0;
-
-    font-size:14px;
-}
-
-.documento-info strong{
-
-    color:#003366;
-
-    font-weight:700;
-}
-
-.documento-info i{
-
-    color:#004aad;
-
-    margin-right:6px;
-
-    width:18px;
-}
-
-.status{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    padding:8px 14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #dcfce7 0%,
-            #c6f6d5 100%
-        );
-
-    color:#166534;
-
-    border-radius:8px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-top:8px;
-
-    box-shadow:
-        0 2px 8px
-        rgba(16,185,129,.15);
-}
-
-.status i{
-
-    color:#16a34a;
-}
-
-
-/* =========================================================
-   AÇÕES - BOTÕES MELHORADOS
+   AÇÕES
 ========================================================= */
 
 .acoes{
 
     display:flex;
 
-    gap:12px;
+    gap:10px;
 
     flex-wrap:wrap;
 
-    margin-top:22px;
+    margin-top:20px;
 }
+
 
 .btn{
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
     padding:
-        14px 26px;
+        13px 22px;
 
     font-size:15px;
 
@@ -1067,169 +686,85 @@ nav{
 
     justify-content:center;
 
-    gap:10px;
+    gap:8px;
 
     transition:
-        all .3s
-        cubic-bezier(
-            .175,
-            .885,
-            .32,
-            1.275
-        );
-
-    box-shadow:
-        0 4px 12px
-        rgba(0,0,0,.15);
-
-    position:relative;
-
-    overflow:hidden;
+        all .3s ease;
 }
 
-.btn::before{
-
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            45deg,
-            transparent 30%,
-            rgba(255,255,255,.2),
-            transparent 70%
-        );
-
-    transform:
-        translateX(-100%);
-}
-
-.btn:hover::before{
-
-    animation:
-        shine .6s ease;
-}
-
-@keyframes shine{
-
-    0%{
-
-        transform:
-            translateX(-100%);
-    }
-
-    100%{
-
-        transform:
-            translateX(100%);
-    }
-}
 
 .btn-pdf{
 
     background:
         linear-gradient(
             135deg,
-            #003366 0%,
-            #004aad 100%
+            #003366,
+            #004aad
         );
 
     color:#fff;
 }
 
+
 .btn-pdf:hover{
 
     transform:
-        translateY(-4px)
-        scale(1.03);
+        translateY(-3px);
 
     box-shadow:
-        0 10px 28px
-        rgba(0,74,173,.35);
+        0 8px 20px
+        rgba(0,74,173,.30);
 }
+
 
 .btn-download{
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffd700 0%,
-            #ffed4e 100%
-        );
+    background:#ffd700;
 
     color:#003366;
-
-    font-weight:800;
 }
+
 
 .btn-download:hover{
 
     transform:
-        translateY(-4px)
-        scale(1.03);
+        translateY(-3px);
 
     box-shadow:
-        0 10px 28px
-        rgba(255,215,0,.40);
-}
-
-.btn i{
-
-    font-size:16px;
+        0 8px 20px
+        rgba(255,215,0,.35);
 }
 
 
 /* =========================================================
-   INFORMAÇÃO DO PDF - MELHORADA
+   INFORMAÇÃO DO PDF
 ========================================================= */
 
 .info-pdf{
 
-    margin-top:28px;
+    margin-top:25px;
 
-    padding:20px 22px;
+    background:#f8f9fa;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fef3c7 0%,
-            #fde68a 100%
-        );
+    border-radius:10px;
 
-    border-radius:12px;
+    padding:18px;
 
-    border-left:
-        5px solid #f59e0b;
-
-    color:#78350f;
+    color:#666;
 
     font-size:14px;
 
-    line-height:1.7;
-
-    box-shadow:
-        0 4px 12px
-        rgba(245,158,11,.20);
+    line-height:1.6;
 }
 
-.info-pdf strong{
-
-    color:#b45309;
-
-    font-weight:700;
-}
 
 .info-pdf i{
 
-    color:#f59e0b;
+    color:#004aad;
 
-    margin-right:8px;
-
-    width:16px;
+    margin-right:6px;
 }
+
 
 /* =========================================================
    RODAPÉ
@@ -1247,78 +782,48 @@ footer{
     color:#fff;
 
     padding:
-        35px 20px;
+        30px 20px;
 
-    margin-top:60px;
+    margin-top:50px;
 
     text-align:center;
-
-    border-top:
-        3px solid #ffd700;
 }
 
-footer div{
-
-    margin:12px 0;
-}
-
-footer i{
-
-    color:#ffd700;
-
-    margin-right:6px;
-}
 
 .footer-redes{
 
-    margin-top:20px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
+    margin-top:15px;
 }
+
 
 .footer-redes a{
 
     color:#fff;
 
-    font-size:22px;
+    margin:
+        0 8px;
+
+    font-size:24px;
 
     transition:
         all .3s ease;
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.12);
+    display:inline-block;
 }
+
 
 .footer-redes a:hover{
 
-    color:#003366;
-
-    background:#ffd700;
+    color:#ffd700;
 
     transform:
-        translateY(-6px)
-        scale(1.15);
+        translateY(-5px)
+        scale(1.2);
 }
 
 
 /* =========================================================
-   RESPONSIVO - TABLET
+   RESPONSIVO TABLET
 ========================================================= */
 
 @media(max-width:1000px){
@@ -1329,10 +834,12 @@ footer i{
             15px 20px;
     }
 
+
     .menu{
 
         gap:4px;
     }
+
 
     .menu a{
 
@@ -1342,28 +849,11 @@ footer i{
         font-size:14px;
     }
 
-    .painel{
-
-        padding:25px;
-    }
-
-    .documento{
-
-        gap:25px;
-
-        padding:20px;
-    }
-
-    .titulo-pagina{
-
-        font-size:2em;
-    }
-
 }
 
 
 /* =========================================================
-   RESPONSIVO - MOBILE
+   RESPONSIVO MOBILE
 ========================================================= */
 
 @media(max-width:767px){
@@ -1374,6 +864,7 @@ footer i{
             15px;
     }
 
+
     .logo-area img{
 
         width:48px;
@@ -1381,10 +872,12 @@ footer i{
         height:60px;
     }
 
+
     .logo{
 
         font-size:18px;
     }
+
 
     .menu-toggle{
 
@@ -1393,10 +886,12 @@ footer i{
         margin-left:auto;
     }
 
+
     nav{
 
         position:static;
     }
+
 
     .menu{
 
@@ -1434,10 +929,12 @@ footer i{
             rgba(0,0,0,.25);
     }
 
+
     .menu.active{
 
         display:flex;
     }
+
 
     .menu li{
 
@@ -1449,6 +946,7 @@ footer i{
         width:100%;
     }
 
+
     .menu a{
 
         width:100%;
@@ -1457,12 +955,14 @@ footer i{
             12px 15px;
     }
 
+
     .titulo-pagina{
 
         font-size:1.9em;
 
         margin-top:35px;
     }
+
 
     .subtitulo{
 
@@ -1471,20 +971,24 @@ footer i{
         margin-bottom:25px;
     }
 
+
     .container{
 
         width:94%;
     }
 
+
     .painel{
 
-        padding:20px;
+        padding:22px;
     }
+
 
     .painel-topo h3{
 
         font-size:1.3em;
     }
+
 
     .documento{
 
@@ -1492,37 +996,29 @@ footer i{
 
         align-items:stretch;
 
-        padding:20px;
-
-        gap:20px;
+        padding:22px;
     }
+
 
     .pdf-icon{
 
-        width:90px;
+        width:75px;
 
-        height:90px;
+        height:75px;
 
-        min-width:90px;
+        min-width:75px;
 
-        font-size:44px;
+        font-size:34px;
 
         align-self:center;
-
-        margin:10px 0;
     }
+
 
     .documento-info h4{
 
-        font-size:1.2em;
-
-        text-align:center;
+        font-size:1.15em;
     }
 
-    .documento-info p{
-
-        text-align:center;
-    }
 
     .acoes{
 
@@ -1531,28 +1027,17 @@ footer i{
         flex-direction:column;
     }
 
+
     .acoes .btn{
 
         width:100%;
-
-        justify-content:center;
-
-        padding:
-            12px 18px;
-    }
-
-    .info-pdf{
-
-        font-size:13px;
-
-        padding:16px 18px;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE PEQUENO (< 420px)
+   MOBILE PEQUENO
 ========================================================= */
 
 @media(max-width:420px){
@@ -1562,10 +1047,12 @@ footer i{
         font-size:16px;
     }
 
+
     .logo-area{
 
         gap:10px;
     }
+
 
     .logo-area img{
 
@@ -1574,46 +1061,22 @@ footer i{
         height:55px;
     }
 
+
     .titulo-pagina{
 
         font-size:1.65em;
-
-        margin:30px 15px 15px;
     }
 
-    .subtitulo{
-
-        font-size:.9em;
-
-        padding:0 15px;
-    }
 
     .painel{
 
-        padding:16px;
+        padding:17px;
     }
+
 
     .documento{
 
-        padding:16px;
-    }
-
-    .painel-topo h3{
-
-        font-size:1.15em;
-    }
-
-    .documento-info h4{
-
-        font-size:1.05em;
-    }
-
-    .btn{
-
-        padding:
-            11px 16px;
-
-        font-size:14px;
+        padding:18px;
     }
 
 }
@@ -1654,17 +1117,16 @@ footer i{
 
     <!-- MENU MOBILE -->
 
-    <button
+    <div
         class="menu-toggle"
-        id="menuToggle"
         onclick="toggleMenu()"
         aria-label="Abrir menu"
-        aria-controls="menu"
-        aria-expanded="false"
-        type="button"
+        title="Abrir menu"
     >
-        <i id="menuIcon" class="fas fa-bars"></i>
-    </button>
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
 
 
     <!-- MENU -->
@@ -2056,62 +1518,7 @@ function toggleMenu(){
     const menu =
         document.getElementById("menu");
 
-    const toggle =
-        document.getElementById("menuToggle");
-
-    const icon =
-        document.getElementById("menuIcon");
-
     menu.classList.toggle("active");
-
-    const aberto =
-        menu.classList.contains("active");
-
-    toggle.setAttribute(
-        "aria-expanded",
-        aberto
-    );
-
-    toggle.setAttribute(
-        "aria-label",
-        aberto
-            ? "Fechar menu"
-            : "Abrir menu"
-    );
-
-    if(aberto){
-
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
-
-    }else{
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-    }
-
-}
-
-
-function fecharMenu(){
-
-    const menu =
-        document.getElementById("menu");
-
-    const toggle =
-        document.getElementById("menuToggle");
-
-    const icon =
-        document.getElementById("menuIcon");
-
-    menu.classList.remove("active");
-
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Abrir menu");
-
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
 
 }
 
@@ -2128,7 +1535,10 @@ document
             "click",
             function(){
 
-                fecharMenu();
+                const menu =
+                    document.getElementById("menu");
+
+                menu.classList.remove("active");
 
             }
         );
@@ -2166,10 +1576,6 @@ document.addEventListener(
 
 </script>
 
-
-<!-- CARREGAR DADOS DO PAINEL ADMIN -->
-<script src="carregar-dados.js"></script>
-<link rel="stylesheet" href="menu-responsivo.css">
 
 </body>
 

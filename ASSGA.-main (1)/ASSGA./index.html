@@ -77,27 +77,14 @@ body{
 
     background:
         linear-gradient(
-            180deg,
-            #edf4ff 0%,
-            #dfeaf8 32%,
-            #f5f8ff 100%
+            135deg,
+            #f5f7fa 0%,
+            #c3cfe2 100%
         );
 
-    color:#1f2937;
+    color:#333;
 
     overflow-x:hidden;
-}
-
-main,
-section,
-article,
-.noticia-item,
-.evento-item,
-.card,
-.painel{
-    background:rgba(255,255,255,0.8);
-    border:1px solid rgba(0,74,173,.08);
-    backdrop-filter:blur(3px);
 }
 
 
@@ -1129,29 +1116,10 @@ footer{
 
 
 /* =====================================================
-   DESKTOP / NOTEBOOK / MONITOR
+   DESKTOP
 ===================================================== */
 
 @media (min-width:1024px){
-
-    header{
-
-        min-height:90px;
-    }
-
-    .menu{
-
-        gap:8px;
-    }
-
-    .menu a{
-
-        font-size:14px;
-
-        padding:12px 15px;
-
-        white-space:nowrap;
-    }
 
     .slider{
 
@@ -1172,15 +1140,15 @@ footer{
 
 
 /* =====================================================
-   NOTEBOOK MÉDIO / CADERNO
+   TABLET
 ===================================================== */
 
-@media (min-width:900px)
+@media (min-width:768px)
 and (max-width:1023px){
 
     header{
 
-        padding:15px 12px;
+        padding:15px;
     }
 
     .logo{
@@ -1195,56 +1163,14 @@ and (max-width:1023px){
 
     .menu a{
 
-        font-size:11.5px;
+        font-size:12px;
 
-        padding:10px 8px;
-
-        white-space:nowrap;
+        padding:10px 9px;
     }
 
     .menu a i{
 
         margin-right:4px;
-
-        color:#fff;
-    }
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (min-width:768px)
-and (max-width:899px){
-
-    header{
-
-        padding:15px 12px;
-    }
-
-    .logo{
-
-        font-size:18px;
-    }
-
-    .menu{
-
-        gap:3px;
-    }
-
-    .menu a{
-
-        font-size:10.5px;
-
-        padding:9px 7px;
-
-        white-space:nowrap;
-    }
-
-    .menu a i{
-
-        margin-right:3px;
 
         color:#fff;
     }
@@ -1292,7 +1218,7 @@ and (max-width:899px){
 
 
 /* =====================================================
-   CELULAR / MESA / TELAS PEQUENAS
+   CELULAR
 ===================================================== */
 
 @media (max-width:767px){
@@ -1300,8 +1226,6 @@ and (max-width:899px){
     header{
 
         padding:12px 15px;
-
-        min-height:76px;
     }
 
     .logo-area{
@@ -1342,7 +1266,7 @@ and (max-width:899px){
 
         grid-auto-flow:row;
 
-        gap:6px;
+        gap:4px;
 
         margin:0;
 
@@ -1380,8 +1304,6 @@ and (max-width:899px){
         text-align:left;
 
         padding:13px 15px;
-
-        font-size:14px;
     }
 
     .menu a i{
@@ -2425,6 +2347,7 @@ document.addEventListener(
    SLIDER
 ===================================================== */
 
+// Carregar imagens do localStorage ou usar padrão
 let imagens = [
 
     "src/imagens/foto1.jpg",
@@ -2434,7 +2357,6 @@ let imagens = [
     "src/imagens/foto3.jpg"
 
 ];
-
 
 let textosSlider = [
 
@@ -2446,7 +2368,7 @@ let textosSlider = [
 
 ];
 
-// Tentar carregar imagens do localStorage
+// Verificar se há dados do slider no localStorage
 try {
     const sliderData = localStorage.getItem("assga_slider");
     if (sliderData) {
@@ -2462,7 +2384,7 @@ try {
         }
     }
 } catch (e) {
-    // Usar imagens padrão
+    console.log("Usando imagens padrão do slider");
 }
 
 let index = 0;
@@ -2747,7 +2669,6 @@ window.addEventListener(
 
 <!-- CARREGAR DADOS DO PAINEL ADMIN -->
 <script src="carregar-dados.js"></script>
-<link rel="stylesheet" href="menu-responsivo.css">
 
 </body>
 
