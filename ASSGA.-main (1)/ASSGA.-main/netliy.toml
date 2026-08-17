@@ -1,0 +1,27 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin"
+  to = "/adminpainel.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
+  to = "/adminpainel.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin-login"
+  to = "/admin-login.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin-login/"
+  to = "/admin-login.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

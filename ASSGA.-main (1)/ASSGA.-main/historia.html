@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="História da ASSGA - Associação Desportiva."
+>
+
+<meta
+    name="theme-color"
+    content="#003366"
+>
+
+<title>História - ASSGA</title>
+
+
+<!-- =====================================================
+     FAVICON
+===================================================== -->
+
+<link
+    rel="icon"
+    href="src/imagens/Assga_foto.jpg"
+    type="image/jpeg"
+>
+
+<link
+    rel="shortcut icon"
+    href="src/imagens/Assga_foto.jpg"
+    type="image/jpeg"
+>
+
+
+<!-- =====================================================
+     FONT AWESOME
+===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fa 0%,
+            #c3cfe2 100%
+        );
+
+    color:#333;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+h2{
+
+    text-align:center;
+
+    margin:40px 0;
+
+    color:#003366;
+
+    font-size:2.5em;
+
+    font-weight:800;
+
+    text-shadow:
+        2px 2px 4px rgba(0,0,0,.1);
+}
+
+h2 i{
+
+    color:#004aad;
+
+    margin-right:10px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366 0%,
+            #004aad 100%
+        );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 30px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:9999;
+
+    box-shadow:
+        0 8px 32px rgba(0,51,102,.3);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease;
+}
+
+.logo-area:hover{
+
+    transform:
+        scale(1.05);
+}
+
+.logo-area a{
+
+    display:flex;
+
+    text-decoration:none;
+}
+
+.logo-area img{
+
+    width:56px;
+
+    height:68px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    background:#fff;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.2);
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ffed4e
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu{
+
+    list-style:none;
+
+    display:inline-grid;
+
+    grid-auto-flow:column;
+
+    gap:10px;
+
+    margin-left:auto;
+
+    align-items:center;
+}
+
+.menu li{
+
+    position:relative;
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    padding:12px 17px;
+
+    border-radius:25px;
+
+    transition:
+        all .4s ease;
+}
+
+
+/* =====================================================
+   ÍCONES DO MENU
+===================================================== */
+
+.menu a i{
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+/* =====================================================
+   HOVER MENU
+===================================================== */
+
+@media (hover:hover){
+
+    .menu a:hover{
+
+        color:#003366;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffd700,
+                #ffed4e
+            );
+
+        box-shadow:
+            0 8px 24px rgba(255,215,0,.4);
+
+        transform:
+            translateY(-3px);
+    }
+
+    .menu a:hover i{
+
+        color:#003366;
+
+        transform:
+            scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   MENU ATIVO / FOCO
+===================================================== */
+
+.menu a:focus{
+
+    color:#003366;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ffed4e
+        );
+
+    outline:
+        3px solid #fff;
+
+    outline-offset:2px;
+}
+
+.menu a:focus i{
+
+    color:#003366;
+}
+
+
+/* =====================================================
+   BOTÃO MENU MOBILE
+===================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:45px;
+
+    height:45px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:#fff;
+
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+.menu-toggle i{
+
+    color:#fff;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   CONTAINER HISTÓRIA
+===================================================== */
+
+.historia-container{
+
+    max-width:1000px;
+
+    margin:40px auto;
+
+    padding:0 20px;
+}
+
+
+/* =====================================================
+   TEXTO HISTÓRIA
+===================================================== */
+
+.historia-texto{
+
+    max-width:1000px;
+
+    margin:40px auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff 0%,
+            #f8f9fa 100%
+        );
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.1);
+
+    line-height:1.8;
+
+    color:#555;
+
+    border-left:
+        6px solid #004aad;
+
+    transition:
+        all .4s ease;
+}
+
+.historia-texto:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,74,173,.18);
+
+    border-left-color:#ffd700;
+}
+
+
+/* =====================================================
+   TÍTULO DA HISTÓRIA
+===================================================== */
+
+.historia-texto h2{
+
+    margin-top:0;
+
+    margin-bottom:25px;
+
+    font-size:2em;
+
+    color:#003366;
+}
+
+.historia-texto h2 i{
+
+    color:#004aad;
+
+    margin-right:10px;
+}
+
+
+/* =====================================================
+   PARÁGRAFO
+===================================================== */
+
+.historia-texto p{
+
+    margin-bottom:15px;
+
+    font-size:1.05em;
+
+    line-height:1.9;
+
+    color:#555;
+}
+
+.historia-texto p i{
+
+    color:#004aad;
+
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   RESPONSÁVEIS
+===================================================== */
+
+.responsaveis{
+
+    padding:60px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9eef5 0%,
+            #d4e1ed 100%
+        );
+
+    margin-top:40px;
+}
+
+
+/* =====================================================
+   TÍTULO RESPONSÁVEIS
+===================================================== */
+
+.responsaveis > h2{
+
+    margin-top:0;
+}
+
+.responsaveis > h2 i{
+
+    color:#004aad;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    max-width:1200px;
+
+    margin:0 auto;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    width:280px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff 0%,
+            #f8f9fa 100%
+        );
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.1);
+
+    border-top:
+        4px solid #004aad;
+
+    text-align:center;
+
+    transition:
+        all .4s
+        cubic-bezier(
+            .175,
+            .885,
+            .32,
+            1.275
+        );
+
+    opacity:1;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 16px 48px rgba(0,74,173,.2);
+
+    border-top-color:#ffd700;
+}
+
+
+/* =====================================================
+   ÍCONE DO CARD
+===================================================== */
+
+.card .card-icon{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366,
+            #004aad
+        );
+
+    color:#ffd700;
+
+    font-size:28px;
+
+    box-shadow:
+        0 8px 20px rgba(0,51,102,.2);
+
+    transition:
+        all .4s ease;
+}
+
+.card:hover .card-icon{
+
+    transform:
+        scale(1.12)
+        rotate(5deg);
+}
+
+
+/* =====================================================
+   FOTO CARD
+===================================================== */
+
+.card img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:
+        4px solid #004aad;
+
+    margin-bottom:15px;
+
+    transition:
+        transform .3s ease;
+}
+
+.card:hover img{
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =====================================================
+   NOME
+===================================================== */
+
+.card h3{
+
+    margin:15px 0 8px;
+
+    color:#003366;
+
+    font-size:1.2em;
+
+    font-weight:800;
+}
+
+.card h3 i{
+
+    color:#004aad;
+
+    margin-right:6px;
+}
+
+
+/* =====================================================
+   CARGO
+===================================================== */
+
+.card p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.5;
+}
+
+.card p i{
+
+    color:#004aad;
+
+    margin-right:6px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366 0%,
+            #002244 100%
+        );
+
+    color:#fff;
+
+    padding:35px 20px;
+
+    margin-top:50px;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   FOOTER TEXTO
+===================================================== */
+
+.footer-copy{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    opacity:.95;
+}
+
+.footer-copy i{
+
+    color:#ffd700;
+
+    margin-right:5px;
+}
+
+
+/* =====================================================
+   REDES SOCIAIS
+===================================================== */
+
+.footer-redes{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.footer-redes a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:21px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.10);
+
+    text-decoration:none;
+
+    transition:
+        all .3s ease;
+}
+
+.footer-redes a:hover{
+
+    color:#003366;
+
+    background:#ffd700;
+
+    transform:
+        translateY(-5px)
+        scale(1.1);
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width:1024px){
+
+    .historia-texto{
+
+        max-width:1000px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width:768px)
+and (max-width:1023px){
+
+    header{
+
+        padding:15px;
+    }
+
+    .logo{
+
+        font-size:22px;
+    }
+
+    .menu{
+
+        gap:4px;
+    }
+
+    .menu a{
+
+        font-size:12px;
+
+        padding:10px 9px;
+    }
+
+    .menu a i{
+
+        font-size:12px;
+
+        margin-right:2px;
+    }
+
+    .historia-texto{
+
+        margin:30px 20px;
+
+        padding:30px;
+    }
+
+    .card{
+
+        width:45%;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width:767px){
+
+    header{
+
+        padding:12px 15px;
+
+        min-height:76px;
+    }
+
+
+    /* LOGO */
+
+    .logo-area{
+
+        gap:10px;
+    }
+
+    .logo-area img{
+
+        width:48px;
+
+        height:60px;
+    }
+
+    .logo{
+
+        font-size:18px;
+    }
+
+
+    /* BOTÃO */
+
+    .menu-toggle{
+
+        display:flex;
+
+        margin-left:auto;
+    }
+
+
+    /* MENU */
+
+    .menu{
+
+        display:none;
+
+        position:absolute;
+
+        top:76px;
+
+        left:15px;
+
+        right:15px;
+
+        width:calc(100% - 30px);
+
+        grid-auto-flow:row;
+
+        gap:4px;
+
+        margin:0;
+
+        padding:15px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(0,51,102,.98),
+                rgba(0,74,173,.98)
+            );
+
+        border-radius:15px;
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.30);
+
+        backdrop-filter:
+            blur(10px);
+    }
+
+    .menu.active{
+
+        display:grid;
+    }
+
+    .menu li{
+
+        width:100%;
+
+        padding:2px 0;
+    }
+
+    .menu a{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        text-align:left;
+
+        padding:13px 15px;
+
+        color:#fff;
+    }
+
+    .menu a i{
+
+        width:25px;
+
+        text-align:center;
+
+        color:#fff;
+    }
+
+
+    /* TÍTULOS */
+
+    h2{
+
+        font-size:1.8em;
+
+        margin:30px 0;
+    }
+
+
+    /* HISTÓRIA */
+
+    .historia-texto{
+
+        margin:25px 12px;
+
+        padding:25px 20px;
+
+        border-left-width:5px;
+    }
+
+    .historia-texto h2{
+
+        font-size:1.6em;
+
+        margin-bottom:20px;
+    }
+
+    .historia-texto p{
+
+        font-size:1em;
+
+        text-align:left;
+    }
+
+
+    /* RESPONSÁVEIS */
+
+    .responsaveis{
+
+        padding:45px 15px;
+    }
+
+    .card{
+
+        width:100%;
+
+        max-width:340px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-redes{
+
+        gap:8px;
+
+        flex-wrap:wrap;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
+
+@media (max-width:380px){
+
+    .logo{
+
+        font-size:16px;
+    }
+
+    .logo-area img{
+
+        width:44px;
+
+        height:55px;
+    }
+
+    .menu{
+
+        left:10px;
+
+        right:10px;
+
+        width:calc(100% - 20px);
+    }
+
+    .historia-texto{
+
+        padding:20px 16px;
+    }
+
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+a:focus,
+button:focus{
+
+    outline:
+        3px solid #ffd700;
+
+    outline-offset:3px;
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+
+        animation:none !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+
+    <!-- LOGO -->
+
+    <div class="logo-area">
+
+        <a
+            href="index.html"
+            aria-label="Página inicial ASSGA"
+        >
+
+            <img
+                src="src/imagens/Assga_foto.jpg"
+                alt="Logo da ASSGA"
+            >
+
+        </a>
+
+        <div class="logo">
+
+            ASSGA
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         BOTÃO MENU MOBILE
+    ================================================== -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+        aria-controls="menu"
+        aria-expanded="false"
+        type="button"
+    >
+
+        <i
+            id="menuIcon"
+            class="fas fa-bars"
+        ></i>
+
+    </button>
+
+
+
+    <!-- =================================================
+         MENU
+    ================================================== -->
+
+    <nav aria-label="Menu principal">
+
+        <ul
+            class="menu"
+            id="menu"
+        >
+
+
+            <!-- HOME -->
+
+            <li>
+
+                <a href="index.html">
+
+                    <i class="fas fa-house"></i>
+
+                    <span>Home</span>
+
+                </a>
+
+            </li>
+
+
+            <!-- HISTÓRIA -->
+
+            <li>
+
+                <a
+                    href="historia.html"
+                    aria-current="page"
+                >
+
+                    <i class="fas fa-book-open"></i>
+
+                    <span>História</span>
+
+                </a>
+
+            </li>
+
+
+            <!-- ESPORTIVA -->
+
+            <li>
+
+                <a href="esportiva.html">
+
+                    <i class="fas fa-futbol"></i>
+
+                    <span>Esportiva</span>
+
+                </a>
+
+            </li>
+
+
+            <!-- EVENTOS -->
+
+            <li>
+
+                <a href="evento.html">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    <span>Eventos</span>
+
+                </a>
+
+            </li>
+
+
+            <!-- ESTATUTO -->
+
+            <li>
+
+                <a href="estatuto.html">
+
+                    <i class="fas fa-file-contract"></i>
+
+                    <span>Estatuto</span>
+
+                </a>
+
+            </li>
+
+
+            <!-- DIRETORIA -->
+
+            <li>
+
+                <a href="diretoria.html">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>Diretoria</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     TÍTULO
+===================================================== -->
+
+<h2>
+
+    <i class="fas fa-book-open"></i>
+
+    Nossa História
+
+</h2>
+
+
+
+<!-- =====================================================
+     HISTÓRIA
+===================================================== -->
+
+<section class="historia-texto">
+
+    <h2>
+
+        <i class="fas fa-shield-halved"></i>
+
+        Sobre a ASSGA
+
+    </h2>
+
+
+    <p>
+
+        <i class="fas fa-circle-info"></i>
+
+        A ASSGA foi fundada com o objetivo de promover o
+        esporte, a integração social e o fortalecimento da
+        comunidade de São Gonçalo do Amarante.
+
+    </p>
+
+
+    <p>
+
+        <i class="fas fa-futbol"></i>
+
+        Ao longo dos anos, a associação passou a desenvolver
+        atividades esportivas, culturais, sociais e educacionais,
+        incentivando a inclusão, a acessibilidade e a participação
+        da comunidade.
+
+    </p>
+
+
+    <p>
+
+        <i class="fas fa-hands-helping"></i>
+
+        A ASSGA também busca fortalecer a união entre seus
+        associados, promovendo ações de integração, esporte,
+        cidadania e valorização social.
+
+    </p>
+
+
+    <p>
+
+        <i class="fas fa-sign-language"></i>
+
+        A associação valoriza a acessibilidade e a comunicação,
+        contribuindo para uma sociedade mais inclusiva e
+        participativa.
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESPONSÁVEIS
+===================================================== -->
+
+<section class="responsaveis">
+
+    <h2>
+
+        <i class="fas fa-users"></i>
+
+        Responsáveis
+
+    </h2>
+
+
+    <div class="cards">
+
+
+        <!-- =================================================
+             PRESIDENTE
+        ================================================== -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fas fa-user-tie"></i>
+
+            </div>
+
+
+            <img
+                src="src/imagens/foto2.jpg"
+                alt="Presidente da ASSGA"
+            >
+
+
+            <h3>
+
+                <i class="fas fa-user"></i>
+
+                Nome do Presidente
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-crown"></i>
+
+                Presidente
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DIRETOR ESPORTIVO
+        ================================================== -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fas fa-person-running"></i>
+
+            </div>
+
+
+            <img
+                src="src/imagens/foto3.jpg"
+                alt="Diretor Esportivo da ASSGA"
+            >
+
+
+            <h3>
+
+                <i class="fas fa-user"></i>
+
+                Nome do Diretor
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-futbol"></i>
+
+                Diretor Esportivo
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COORDENADOR
+        ================================================== -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fas fa-people-group"></i>
+
+            </div>
+
+
+            <img
+                src="src/imagens/foto1.jpg"
+                alt="Coordenador da ASSGA"
+            >
+
+
+            <h3>
+
+                <i class="fas fa-user"></i>
+
+                Nome do Coordenador
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-clipboard-user"></i>
+
+                Coordenador
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-copy">
+
+        <i class="fas fa-copyright"></i>
+
+        2026 ASSGA -
+        Todos os direitos reservados
+
+        <br>
+
+        <i class="fas fa-futbol"></i>
+
+        Associação Desportiva
+
+        <br>
+
+        <i class="fas fa-building"></i>
+
+        CNPJ:
+        57.242.499/0001-60
+
+    </div>
+
+
+
+    <!-- =================================================
+         REDES SOCIAIS
+    ================================================== -->
+
+    <div
+        class="footer-redes"
+        aria-label="Redes sociais da ASSGA"
+    >
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            href="https://www.instagram.com/assga_2019/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram ASSGA"
+            title="Instagram"
+        >
+
+            <i class="fab fa-instagram"></i>
+
+        </a>
+
+
+        <!-- YOUTUBE -->
+
+        <a
+            href="https://www.youtube.com/@ASSGAESPORTES"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube ASSGA"
+            title="YouTube"
+        >
+
+            <i class="fab fa-youtube"></i>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/5584996981248?text=Ol%C3%A1%2C%20eu%20estou%20aqui"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp ASSGA"
+            title="WhatsApp"
+        >
+
+            <i class="fab fa-whatsapp"></i>
+
+        </a>
+
+
+        <!-- EMAIL -->
+
+        <a
+            href="mailto:assgar2019@gmail.com"
+            aria-label="Email ASSGA"
+            title="Email"
+        >
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+
+        <!-- TELEFONE -->
+
+        <a
+            href="tel:+5584996981248"
+            aria-label="Telefone ASSGA"
+            title="Telefone"
+        >
+
+            <i class="fas fa-phone"></i>
+
+        </a>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("menu");
+
+    const toggle =
+        document.getElementById("menuToggle");
+
+    const icon =
+        document.getElementById("menuIcon");
+
+
+    menu.classList.toggle("active");
+
+
+    const aberto =
+        menu.classList.contains("active");
+
+
+    toggle.setAttribute(
+        "aria-expanded",
+        aberto
+    );
+
+
+    toggle.setAttribute(
+        "aria-label",
+        aberto
+            ? "Fechar menu"
+            : "Abrir menu"
+    );
+
+
+    if(aberto){
+
+        icon.classList.remove(
+            "fa-bars"
+        );
+
+        icon.classList.add(
+            "fa-xmark"
+        );
+
+    }else{
+
+        icon.classList.remove(
+            "fa-xmark"
+        );
+
+        icon.classList.add(
+            "fa-bars"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   FECHAR MENU
+===================================================== */
+
+function fecharMenu(){
+
+    const menu =
+        document.getElementById("menu");
+
+    const toggle =
+        document.getElementById("menuToggle");
+
+    const icon =
+        document.getElementById("menuIcon");
+
+
+    menu.classList.remove(
+        "active"
+    );
+
+
+    toggle.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    toggle.setAttribute(
+        "aria-label",
+        "Abrir menu"
+    );
+
+
+    icon.classList.remove(
+        "fa-xmark"
+    );
+
+    icon.classList.add(
+        "fa-bars"
+    );
+
+}
+
+
+/* =====================================================
+   FECHAR AO CLICAR NO MENU
+===================================================== */
+
+document
+    .querySelectorAll(".menu a")
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                fecharMenu();
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            fecharMenu();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLICAR FORA
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const menu =
+            document.getElementById("menu");
+
+        const toggle =
+            document.getElementById("menuToggle");
+
+
+        if(
+            window.innerWidth <= 767 &&
+            menu.classList.contains("active") &&
+            !menu.contains(event.target) &&
+            !toggle.contains(event.target)
+        ){
+
+            fecharMenu();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   REDIMENSIONAMENTO
+===================================================== */
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        if(window.innerWidth > 767){
+
+            fecharMenu();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ANIMAÇÃO DOS CARDS
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const cards =
+            document.querySelectorAll(".card");
+
+
+        cards.forEach(
+            function(card,index){
+
+                card.style.opacity = "0";
+
+                card.style.transform =
+                    "translateY(30px)";
+
+
+                setTimeout(
+                    function(){
+
+                        card.style.transition =
+                            "all .7s ease";
+
+                        card.style.opacity =
+                            "1";
+
+                        card.style.transform =
+                            "translateY(0)";
+
+                    },
+                    150 + (index * 200)
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

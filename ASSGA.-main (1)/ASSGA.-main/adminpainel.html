@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex,nofollow"
+    >
+
+    <title>ASSGA - Painel Administrativo</title>
+
+    <link
+        rel="icon"
+        href="/src/imagens/Assga_foto.jpg"
+        type="image/jpeg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="adminpainel.css"
+    >
+
+</head>
+
+<body>
+
+<!-- BLOQUEIO -->
+
+<div id="bloqueio">
+
+    <div class="bloqueio-box">
+
+        <i class="fas fa-lock"></i>
+
+        <h2>Acesso restrito</h2>
+
+        <p>
+            Você precisa estar autenticado
+            como administrador para acessar
+            o painel ASSGA.
+        </p>
+
+        <a
+            href="admin-login.html"
+            class="btn-login"
+        >
+            <i class="fas fa-sign-in-alt"></i>
+            Ir para Login
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="admin-header">
+
+    <div class="admin-brand">
+
+        <img
+            src="/src/imagens/Assga_foto.jpg"
+            alt="ASSGA"
+        >
+
+        <h1>ASSGA ADMIN</h1>
+
+    </div>
+
+    <div class="admin-user">
+
+        <span id="nomeAdministrador">
+            <i class="fas fa-user-shield"></i>
+            Administrador
+        </span>
+
+        <button
+            class="btn-sair"
+            onclick="sairPainel()"
+        >
+            <i class="fas fa-sign-out-alt"></i>
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- MENU -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+        Administração
+    </div>
+
+    <button
+        class="nav-btn active"
+        data-page="dashboard"
+    >
+        <i class="fas fa-chart-line"></i>
+        <span>Dashboard</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="index"
+    >
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="historia"
+    >
+        <i class="fas fa-book"></i>
+        <span>História</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="esportiva"
+    >
+        <i class="fas fa-futbol"></i>
+        <span>Esportiva</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="evento"
+    >
+        <i class="fas fa-calendar-alt"></i>
+        <span>Eventos</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="estatuto"
+    >
+        <i class="fas fa-file-alt"></i>
+        <span>Estatuto</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="diretoria"
+    >
+        <i class="fas fa-users"></i>
+        <span>Diretoria</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="slider"
+    >
+        <i class="fas fa-images"></i>
+        <span>Fotos Slider</span>
+    </button>
+
+    <button
+        class="nav-btn"
+        data-page="registros"
+    >
+        <i class="fas fa-clipboard-list"></i>
+        <span>Registros</span>
+    </button>
+
+    <div class="sidebar-title">
+        Site
+    </div>
+
+    <button onclick="abrirSite()">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Abrir Site</span>
+    </button>
+
+</aside>
+
+
+<!-- CONTEÚDO -->
+
+<main class="main">
+
+
+<!-- DASHBOARD -->
+
+<section
+    class="page active"
+    id="page-dashboard"
+>
+
+    <div class="page-title">
+
+        <h2>Dashboard</h2>
+
+        <p>
+            Gerenciamento completo do site ASSGA
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fas fa-file-code"></i>
+            </div>
+
+            <h3>Páginas</h3>
+
+            <div class="card-number">
+                6
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fas fa-images"></i>
+            </div>
+
+            <h3>Fotos Slider</h3>
+
+            <div
+                class="card-number"
+                id="totalFotos"
+            >
+                3
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+
+            <h3>Eventos</h3>
+
+            <div
+                class="card-number"
+                id="totalEventos"
+            >
+                0
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+
+            <h3>Registros</h3>
+
+            <div
+                class="card-number"
+                id="totalRegistros"
+            >
+                0
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                <i class="fas fa-cog"></i>
+                Gerenciamento
+            </h3>
+
+        </div>
+
+        <div class="aviso aviso-info">
+
+            <strong>ASSGA:</strong>
+
+            selecione uma página no menu
+            para editar seu conteúdo.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOME -->
+
+<section
+    class="page"
+    id="page-index"
+>
+
+    <div class="page-title">
+
+        <h2>Home</h2>
+
+        <p>Gerenciar index.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                <i class="fas fa-home"></i>
+                Página Inicial
+            </h3>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Título</label>
+
+                <input
+                    type="text"
+                    id="indexTitulo"
+                    value="2º HALLOWEEN ASSGA"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Data</label>
+
+                <input
+                    type="date"
+                    id="indexData"
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Texto</label>
+
+                <textarea id="indexTexto">Estão abertas as inscrições para o 2º HALLOWEEN ASSGA!</textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Data do evento</label>
+
+                <input
+                    type="text"
+                    id="indexEventoData"
+                    value="28 e 29 de novembro de 2026"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Local</label>
+
+                <input
+                    type="text"
+                    id="indexLocal"
+                    value="Em breve"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Vagas</label>
+
+                <input
+                    type="number"
+                    id="indexVagas"
+                    value="100"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Valor</label>
+
+                <input
+                    type="text"
+                    id="indexPreco"
+                    value="R$ 100,00"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarIndex()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('index.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HISTÓRIA -->
+
+<section
+    class="page"
+    id="page-historia"
+>
+
+    <div class="page-title">
+
+        <h2>História</h2>
+
+        <p>Gerenciar historia.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+
+                <label>Título</label>
+
+                <input
+                    type="text"
+                    id="historiaTitulo"
+                    value="História da ASSGA"
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Conteúdo</label>
+
+                <textarea
+                    id="historiaTexto"
+                >A ASSGA é uma associação desportiva dedicada ao esporte, integração e desenvolvimento social.</textarea>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarHistoria()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar História
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('historia.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ESPORTIVA -->
+
+<section
+    class="page"
+    id="page-esportiva"
+>
+
+    <div class="page-title">
+
+        <h2>Esportiva</h2>
+
+        <p>Gerenciar esportiva.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Título</label>
+
+                <input
+                    type="text"
+                    id="esportivaTitulo"
+                    value="ASSGA Esportiva"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Modalidade</label>
+
+                <input
+                    type="text"
+                    id="esportivaModalidade"
+                    value="Futsal"
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Descrição</label>
+
+                <textarea id="esportivaTexto">A ASSGA promove atividades esportivas, futsal, integração e participação da comunidade.</textarea>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarEsportiva()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('esportiva.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTOS -->
+
+<section
+    class="page"
+    id="page-evento"
+>
+
+    <div class="page-title">
+
+        <h2>Eventos</h2>
+
+        <p>Gerenciar evento.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Nome do evento</label>
+
+                <input
+                    type="text"
+                    id="eventoNome"
+                    value="2º HALLOWEEN ASSGA"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Data</label>
+
+                <input
+                    type="text"
+                    id="eventoData"
+                    value="28 e 29 de novembro de 2026"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Local</label>
+
+                <input
+                    type="text"
+                    id="eventoLocal"
+                    value="Em breve"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Vagas</label>
+
+                <input
+                    type="number"
+                    id="eventoVagas"
+                    value="100"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Valor</label>
+
+                <input
+                    type="text"
+                    id="eventoValor"
+                    value="R$ 100,00"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="eventoStatus">
+
+                    <option>Aberto</option>
+                    <option>Encerrado</option>
+                    <option>Em breve</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Descrição</label>
+
+                <textarea id="eventoDescricao">Prepare-se para um evento especial com muita diversão, esporte, integração e confraternização.</textarea>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarEvento()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar Evento
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('evento.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ESTATUTO -->
+
+<section
+    class="page"
+    id="page-estatuto"
+>
+
+    <div class="page-title">
+
+        <h2>Estatuto</h2>
+
+        <p>Gerenciar estatuto.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                <i class="fas fa-file-alt"></i>
+                Estatuto da ASSGA
+            </h3>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+
+                <label>Título</label>
+
+                <input
+                    type="text"
+                    id="estatutoTitulo"
+                    value="Estatuto da ASSGA"
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Descrição</label>
+
+                <textarea
+                    id="estatutoTexto"
+                >Estatuto social da Associação Desportiva ASSGA.</textarea>
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Caminho do PDF</label>
+
+                <input
+                    type="text"
+                    id="estatutoPdf"
+                    value="/src/documentos/estatuto.pdf"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarEstatuto()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar Estatuto
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('estatuto.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DIRETORIA -->
+
+<section
+    class="page"
+    id="page-diretoria"
+>
+
+    <div class="page-title">
+
+        <h2>Diretoria</h2>
+
+        <p>Gerenciar diretoria.html</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Presidente</label>
+
+                <input
+                    type="text"
+                    id="presidente"
+                    placeholder="Nome do presidente"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Vice-presidente</label>
+
+                <input
+                    type="text"
+                    id="vicePresidente"
+                    placeholder="Nome do vice-presidente"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Secretário(a)</label>
+
+                <input
+                    type="text"
+                    id="secretario"
+                    placeholder="Nome do secretário"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Tesoureiro(a)</label>
+
+                <input
+                    type="text"
+                    id="tesoureiro"
+                    placeholder="Nome do tesoureiro"
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Outras informações</label>
+
+                <textarea
+                    id="diretoriaTexto"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarDiretoria()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar Diretoria
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="abrirPagina('diretoria.html')"
+            >
+                <i class="fas fa-eye"></i>
+                Visualizar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDER -->
+
+<section
+    class="page"
+    id="page-slider"
+>
+
+    <div class="page-title">
+
+        <h2>Fotos Slider</h2>
+
+        <p>Gerenciar imagens do site</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Foto 1</label>
+
+                <input
+                    type="text"
+                    id="foto1"
+                    value="/src/imagens/foto1.jpg"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Foto 2</label>
+
+                <input
+                    type="text"
+                    id="foto2"
+                    value="/src/imagens/foto2.jpg"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Foto 3</label>
+
+                <input
+                    type="text"
+                    id="foto3"
+                    value="/src/imagens/foto3.jpg"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-success"
+                onclick="salvarSlider()"
+            >
+                <i class="fas fa-save"></i>
+                Salvar Slider
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTROS -->
+
+<section
+    class="page"
+    id="page-registros"
+>
+
+    <div class="page-title">
+
+        <h2>Registros</h2>
+
+        <p>Inscrições e registros recebidos</p>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                <i class="fas fa-clipboard-list"></i>
+                Lista de Registros
+            </h3>
+
+            <button
+                class="btn btn-danger"
+                onclick="limparRegistros()"
+            >
+                <i class="fas fa-trash"></i>
+                Limpar
+            </button>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaRegistros"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Dados salvos!
+</div>
+
+
+<script src="adminpainel.js"></script>
+
+</body>
+
+</html>

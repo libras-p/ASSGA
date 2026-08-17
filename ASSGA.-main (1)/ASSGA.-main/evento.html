@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Eventos - ASSGA</title>
+
+<link
+    rel="icon"
+    href="src/imagens/Assga_foto.jpg"
+    type="image/jpeg"
+>
+
+<link
+    rel="shortcut icon"
+    href="src/imagens/Assga_foto.jpg"
+    type="image/jpeg"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fa,
+            #c3cfe2
+        );
+
+    overflow-x:hidden;
+
+    color:#555;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366,
+            #004aad
+        );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 30px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    box-shadow:
+        0 8px 32px
+        rgba(0,51,102,.30);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.logo-area a{
+
+    display:flex;
+
+    text-decoration:none;
+}
+
+.logo-area img{
+
+    width:56px;
+    height:68px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,0,0,.20);
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ffed4e
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+nav{
+    margin-left:auto;
+}
+
+.menu{
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    padding:12px 16px;
+
+    border-radius:25px;
+
+    transition:.3s;
+}
+
+.menu a:hover{
+
+    color:#003366;
+
+    background:#ffd700;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 24px
+        rgba(255,215,0,.40);
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:28px;
+
+    color:#fff;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.titulo{
+
+    text-align:center;
+
+    margin:
+        45px 20px 10px;
+
+    color:#003366;
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            2.8rem
+        );
+
+    font-weight:800;
+}
+
+.titulo i{
+
+    color:#004aad;
+
+    margin-right:8px;
+}
+
+.subtitulo{
+
+    text-align:center;
+
+    margin:
+        0 20px 40px;
+
+    color:#666;
+
+    font-size:16px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    max-width:1100px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:
+        0 20px 60px;
+}
+
+
+/* =====================================================
+   LISTA DE EVENTOS
+===================================================== */
+
+.lista-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.lista-header h2{
+
+    color:#003366;
+
+    font-size:1.5rem;
+}
+
+.lista-header h2 i{
+
+    color:#004aad;
+
+    margin-right:7px;
+}
+
+.contador{
+
+    background:#003366;
+
+    color:#fff;
+
+    padding:
+        8px 15px;
+
+    border-radius:20px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   EVENTOS
+===================================================== */
+
+.eventos{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                280px,
+                1fr
+            )
+        );
+
+    gap:25px;
+}
+
+.evento-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    border-top:
+        5px solid #004aad;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.10);
+
+    transition:.35s;
+}
+
+.evento-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-top-color:#ffd700;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,74,173,.20);
+}
+
+.evento-topo{
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366,
+            #004aad
+        );
+
+    color:#fff;
+
+    padding:22px;
+}
+
+.evento-topo h3{
+
+    font-size:1.25rem;
+
+    margin-bottom:10px;
+}
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    padding:
+        5px 10px;
+
+    border-radius:20px;
+
+    font-size:.78rem;
+
+    font-weight:700;
+}
+
+.status.aberto{
+
+    background:#d4edda;
+
+    color:#155724;
+}
+
+.status.encerrado{
+
+    background:#f8d7da;
+
+    color:#721c24;
+}
+
+.status.breve{
+
+    background:#fff3cd;
+
+    color:#856404;
+}
+
+.evento-info{
+
+    padding:20px;
+}
+
+.info-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-bottom:13px;
+
+    color:#555;
+
+    font-size:.95rem;
+
+    line-height:1.5;
+}
+
+.info-item i{
+
+    width:20px;
+
+    color:#004aad;
+
+    text-align:center;
+
+    margin-top:3px;
+}
+
+.evento-descricao{
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:
+        1px solid #eee;
+
+    line-height:1.6;
+
+    color:#666;
+}
+
+.evento-descricao i{
+
+    color:#004aad;
+
+    margin-right:5px;
+}
+
+
+/* =====================================================
+   SEM EVENTOS
+===================================================== */
+
+.sem-eventos{
+
+    background:#fff;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+}
+
+.sem-eventos i{
+
+    font-size:55px;
+
+    color:#004aad;
+
+    margin-bottom:15px;
+}
+
+.sem-eventos h3{
+
+    color:#003366;
+
+    margin-bottom:8px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366,
+            #002244
+        );
+
+    color:#fff;
+
+    padding:
+        35px 20px;
+
+    text-align:center;
+
+    margin-top:50px;
+}
+
+.footer-logo{
+
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.footer-logo i{
+
+    color:#ffd700;
+
+    margin-right:8px;
+}
+
+.footer-info{
+
+    margin:8px 0;
+
+    color:#e8eef5;
+}
+
+.footer-info i{
+
+    color:#ffd700;
+
+    margin-right:6px;
+}
+
+.footer-redes{
+
+    margin:22px 0;
+}
+
+.footer-redes a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    color:#fff;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    margin:0 5px;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.footer-redes a:hover{
+
+    background:#ffd700;
+
+    color:#003366;
+
+    transform:
+        translateY(-5px);
+}
+
+.copyright{
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
+    padding-top:18px;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+    opacity:.85;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:767px){
+
+    header{
+
+        padding:
+            12px 15px;
+    }
+
+    .logo-area img{
+
+        width:48px;
+        height:60px;
+    }
+
+    .logo{
+
+        font-size:19px;
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+        margin-left:auto;
+    }
+
+    .menu{
+
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+
+        left:15px;
+        right:15px;
+
+        width:
+            calc(100% - 30px);
+
+        flex-direction:column;
+
+        padding:15px;
+
+        gap:5px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(0,51,102,.98),
+                rgba(0,74,173,.98)
+            );
+
+        border-radius:14px;
+
+        box-shadow:
+            0 15px 35px
+            rgba(0,0,0,.25);
+    }
+
+    .menu.active{
+
+        display:flex;
+    }
+
+    .menu li{
+
+        width:100%;
+    }
+
+    .menu a{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        padding:
+            13px 15px;
+    }
+
+    .titulo{
+
+        margin-top:35px;
+    }
+
+    .lista-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .contador{
+
+        align-self:flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+.menu a:focus-visible{
+
+    outline:
+        3px solid #ffd700;
+
+    outline-offset:3px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo-area">
+
+        <a href="index.html">
+
+            <img
+                src="src/imagens/Assga_foto.jpg"
+                alt="Logo ASSGA"
+            >
+
+        </a>
+
+        <div class="logo">
+            ASSGA
+        </div>
+
+    </div>
+
+
+    <div
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+
+    <nav>
+
+        <ul
+            class="menu"
+            id="menu"
+        >
+
+            <li>
+                <a href="index.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Home</span>
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="historia.html">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>História</span>
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="esportiva.html">
+
+                    <i class="fa-solid fa-futbol"></i>
+
+                    <span>Esportiva</span>
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="evento.html">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Eventos</span>
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="estatuto.html">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <span>Estatuto</span>
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="diretoria.html">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Diretoria</span>
+
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     TÍTULO
+===================================================== -->
+
+<h1 class="titulo">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+    Eventos
+
+</h1>
+
+
+<p class="subtitulo">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    Confira os eventos da ASSGA
+
+</p>
+
+
+<!-- =====================================================
+     CONTEÚDO PÚBLICO
+===================================================== -->
+
+<main class="container">
+
+
+    <section>
+
+        <div class="lista-header">
+
+            <h2>
+
+                <i class="fa-solid fa-list-check"></i>
+
+                Eventos cadastrados
+
+            </h2>
+
+            <span
+                class="contador"
+                id="contador"
+            >
+                0 eventos
+            </span>
+
+        </div>
+
+
+        <div
+            class="eventos"
+            id="listaEventos"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-people-group"></i>
+
+        ASSGA
+
+    </div>
+
+
+    <p class="footer-info">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        São Gonçalo do Amarante - RN
+
+    </p>
+
+
+    <p class="footer-info">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        Eventos da Associação
+
+    </p>
+
+
+    <div class="footer-redes">
+
+        <a
+            href="#"
+            aria-label="Facebook"
+        >
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+
+        <a
+            href="#"
+            aria-label="Instagram"
+        >
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+
+        <a
+            href="#"
+            aria-label="WhatsApp"
+        >
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+
+        <a
+            href="#"
+            aria-label="YouTube"
+        >
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        <i class="fa-regular fa-copyright"></i>
+
+        2026 ASSGA - Todos os direitos reservados
+
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("menu");
+
+    const toggle =
+        document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("active");
+
+    toggle.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("active")
+    );
+
+}
+
+
+document
+    .querySelectorAll(".menu a")
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                document
+                    .getElementById("menu")
+                    .classList
+                    .remove("active");
+
+                document
+                    .querySelector(".menu-toggle")
+                    .setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   EVENTOS PÚBLICOS
+===================================================== */
+
+/*
+   IMPORTANTE:
+
+   Esta página NÃO possui:
+
+   - cadastro
+   - edição
+   - exclusão
+   - formulário
+   - botão salvar
+   - botão editar
+   - botão excluir
+
+   O gerenciamento deverá ficar somente
+   no Admin Painel.
+
+   Enquanto o Django não estiver conectado,
+   os eventos abaixo servem apenas como
+   exemplo de visualização.
+*/
+
+
+const eventos = [
+
+    {
+        nome:
+            "Campeonato de Futsal ASSGA",
+
+        data:
+            "2026-09-15",
+
+        local:
+            "Ginásio Municipal",
+
+        vagas:
+            20,
+
+        valor:
+            0,
+
+        status:
+            "aberto",
+
+        descricao:
+            "Campeonato de futsal da ASSGA com participação de equipes da comunidade."
+    },
+
+    {
+        nome:
+            "Encontro da Comunidade Surda",
+
+        data:
+            "2026-10-05",
+
+        local:
+            "São Gonçalo do Amarante - RN",
+
+        vagas:
+            100,
+
+        valor:
+            0,
+
+        status:
+            "breve",
+
+        descricao:
+            "Encontro de integração, cultura, esporte e acessibilidade."
+    }
+
+];
+
+
+/* =====================================================
+   MOSTRAR EVENTOS
+===================================================== */
+
+function mostrarEventos(){
+
+    const lista =
+        document.getElementById(
+            "listaEventos"
+        );
+
+
+    const contador =
+        document.getElementById(
+            "contador"
+        );
+
+
+    contador.textContent =
+        eventos.length +
+        (
+            eventos.length === 1
+                ? " evento"
+                : " eventos"
+        );
+
+
+    if(eventos.length === 0){
+
+        lista.innerHTML = `
+
+            <div class="sem-eventos">
+
+                <i
+                    class="fa-solid fa-calendar-xmark"
+                ></i>
+
+                <h3>
+                    Nenhum evento cadastrado
+                </h3>
+
+                <p>
+                    No momento não existem eventos cadastrados.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    lista.innerHTML =
+        eventos
+            .map(
+                evento =>
+                    criarCard(evento)
+            )
+            .join("");
+
+}
+
+
+/* =====================================================
+   CRIAR CARD
+===================================================== */
+
+function criarCard(evento){
+
+    let statusTexto =
+        "";
+
+    let statusIcone =
+        "";
+
+
+    if(evento.status === "aberto"){
+
+        statusTexto =
+            "Inscrições abertas";
+
+        statusIcone =
+            '<i class="fa-solid fa-circle-check"></i>';
+
+    }
+
+
+    if(evento.status === "encerrado"){
+
+        statusTexto =
+            "Encerrado";
+
+        statusIcone =
+            '<i class="fa-solid fa-circle-xmark"></i>';
+
+    }
+
+
+    if(evento.status === "breve"){
+
+        statusTexto =
+            "Em breve";
+
+        statusIcone =
+            '<i class="fa-solid fa-clock"></i>';
+
+    }
+
+
+    const dataFormatada =
+        formatarData(
+            evento.data
+        );
+
+
+    const valorFormatado =
+        Number(evento.valor) > 0
+
+        ?
+
+        Number(evento.valor)
+            .toLocaleString(
+                "pt-BR",
+                {
+                    style:"currency",
+                    currency:"BRL"
+                }
+            )
+
+        :
+
+        "Gratuito";
+
+
+    return `
+
+        <article class="evento-card">
+
+
+            <div class="evento-topo">
+
+                <h3>
+
+                    <i
+                        class="fa-solid fa-calendar-day"
+                    ></i>
+
+                    ${escapar(evento.nome)}
+
+                </h3>
+
+
+                <span
+                    class="status ${evento.status}"
+                >
+
+                    ${statusIcone}
+
+                    ${statusTexto}
+
+                </span>
+
+            </div>
+
+
+            <div class="evento-info">
+
+
+                <div class="info-item">
+
+                    <i
+                        class="fa-solid fa-calendar-days"
+                    ></i>
+
+                    <span>
+
+                        <strong>
+                            Data:
+                        </strong>
+
+                        ${dataFormatada}
+
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i
+                        class="fa-solid fa-location-dot"
+                    ></i>
+
+                    <span>
+
+                        <strong>
+                            Local:
+                        </strong>
+
+                        ${escapar(evento.local)}
+
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i
+                        class="fa-solid fa-users"
+                    ></i>
+
+                    <span>
+
+                        <strong>
+                            Vagas:
+                        </strong>
+
+                        ${evento.vagas}
+
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i
+                        class="fa-solid fa-money-bill-wave"
+                    ></i>
+
+                    <span>
+
+                        <strong>
+                            Valor:
+                        </strong>
+
+                        ${valorFormatado}
+
+                    </span>
+
+                </div>
+
+
+                <div class="evento-descricao">
+
+                    <i
+                        class="fa-solid fa-align-left"
+                    ></i>
+
+                    <strong>
+                        Descrição:
+                    </strong>
+
+                    <br>
+
+                    ${escapar(evento.descricao)}
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FORMATAR DATA
+===================================================== */
+
+function formatarData(data){
+
+    if(!data){
+
+        return "Data não informada";
+
+    }
+
+
+    const partes =
+        data.split("-");
+
+
+    if(partes.length !== 3){
+
+        return data;
+
+    }
+
+
+    return (
+        partes[2] +
+        "/" +
+        partes[1] +
+        "/" +
+        partes[0]
+    );
+
+}
+
+
+/* =====================================================
+   SEGURANÇA HTML
+===================================================== */
+
+function escapar(texto){
+
+    if(!texto){
+
+        return "";
+
+    }
+
+
+    return String(texto)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        mostrarEventos();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

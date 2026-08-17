@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="robots"
+    content="noindex,nofollow"
+>
+
+<title>ASSGA - Login Administrativo</title>
+
+<link
+    rel="icon"
+    href="/src/imagens/Assga_foto.jpg"
+    type="image/jpeg"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #003366,
+            #004aad
+        );
+}
+
+.login-box{
+
+    width:min(430px,100%);
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30);
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:28px;
+}
+
+.logo img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    border:4px solid #004aad;
+
+    background:#fff;
+}
+
+.logo h1{
+
+    margin-top:14px;
+
+    color:#003366;
+
+    font-size:25px;
+
+    font-weight:900;
+}
+
+.logo p{
+
+    margin-top:5px;
+
+    color:#718096;
+}
+
+.erro{
+
+    display:none;
+
+    margin-bottom:18px;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    background:#f8d7da;
+
+    color:#842029;
+
+    text-align:center;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+.form-group{
+
+    margin-bottom:18px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#003366;
+
+    font-weight:800;
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccd6e0;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:15px;
+
+    background:#f9fbfd;
+
+}
+
+.form-group input:focus{
+
+    border-color:#004aad;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 0 3px rgba(0,74,173,.10);
+}
+
+.btn-login{
+
+    width:100%;
+
+    border:0;
+
+    padding:14px;
+
+    border-radius:9px;
+
+    background:#004aad;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+
+    background:#003366;
+
+    transform:translateY(-2px);
+}
+
+.voltar{
+
+    display:block;
+
+    margin-top:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#004aad;
+
+    font-weight:800;
+}
+
+.info-login{
+
+    margin-top:20px;
+
+    padding:12px;
+
+    background:#eef5ff;
+
+    border-radius:9px;
+
+    color:#315477;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="logo">
+
+        <img
+            src="/src/imagens/Assga_foto.jpg"
+            alt="ASSGA"
+        >
+
+        <h1>ASSGA ADMIN</h1>
+
+        <p>Painel Administrativo</p>
+
+    </div>
+
+
+    <div
+        id="erro"
+        class="erro"
+    >
+
+        <i class="fas fa-circle-exclamation"></i>
+
+        Usuário ou senha inválidos.
+
+    </div>
+
+
+    <form id="loginForm">
+
+        <div class="form-group">
+
+            <label for="usuario">
+
+                <i class="fas fa-user"></i>
+
+                Usuário
+
+            </label>
+
+            <input
+                type="text"
+                id="usuario"
+                autocomplete="username"
+                placeholder="Digite o usuário"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="senha">
+
+                <i class="fas fa-lock"></i>
+
+                Senha
+
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                autocomplete="current-password"
+                placeholder="Digite a senha"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn-login"
+        >
+
+            <i class="fas fa-right-to-bracket"></i>
+
+            Entrar no Painel
+
+        </button>
+
+    </form>
+
+
+    <div class="info-login">
+
+        <strong>Acesso administrativo</strong><br>
+
+        Área exclusiva para gerenciamento
+        do site ASSGA.
+
+    </div>
+
+
+    <a
+        href="/"
+        class="voltar"
+    >
+
+        <i class="fas fa-arrow-left"></i>
+
+        Voltar para o site
+
+    </a>
+
+</div>
+
+
+<script>
+
+const form =
+    document.getElementById("loginForm");
+
+const erro =
+    document.getElementById("erro");
+
+
+/*
+=========================================================
+ LOGIN
+=========================================================
+*/
+
+form.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        const usuario =
+            document
+            .getElementById("usuario")
+            .value
+            .trim();
+
+        const senha =
+            document
+            .getElementById("senha")
+            .value;
+
+
+        /*
+        LOGIN DEMONSTRATIVO
+
+        Usuário:
+        admin
+
+        Senha:
+        123456
+
+        Para produção:
+        utilizar Django/backend.
+        */
+
+        if(
+            usuario === "admin" &&
+            senha === "123456"
+        ){
+
+            localStorage.setItem(
+                "assga_admin_logado",
+                "true"
+            );
+
+            localStorage.setItem(
+                "assga_admin_usuario",
+                usuario
+            );
+
+            window.location.href =
+                "/adminpainel.html";
+
+            return;
+
+        }
+
+
+        erro.style.display =
+            "block";
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
